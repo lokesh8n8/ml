@@ -69,6 +69,8 @@ epochs = 100
 w_1, b_1, train_loss_1 = train(X_train, y_train, epochs, eta0)
 
 print(f"Task 1: Weights: {w_1}, Bias: {b_1}")
+final_cost = train_loss_1[-1]
+print(f"Final Cost After Convergence: {final_cost}")
 
 # Task 2: Plot Cost Function vs Iterations
 plt.plot(train_loss_1)
@@ -128,6 +130,7 @@ def evaluate_model(w, b, X, y):
     return cm, accuracy, precision, recall, f1
 
 cm, acc, prec, recall, f1 = evaluate_model(w_1, b_1, X_train, y_train)
+
 print(f"Confusion Matrix:\n{cm}")
 print(f"Accuracy: {acc}")
 print(f"Precision: {prec}")
